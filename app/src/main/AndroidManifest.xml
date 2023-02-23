@@ -12,7 +12,7 @@
         android:theme="@style/Theme.TourismAppKK"
         tools:targetApi="31">
         <activity
-            android:name=".TourismListActivity"
+            android:name=".activities.TourismListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
