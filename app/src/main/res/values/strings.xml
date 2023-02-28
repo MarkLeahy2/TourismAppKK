@@ -2,5 +2,7 @@
     <string name="app_name">TourismAppKK</string>
     <string name="message">Login</string>
     <string name="menu_addLocation">Add</string>
+    <string name="button_addLocation">Add Location</string>
+
 
 </resources>
