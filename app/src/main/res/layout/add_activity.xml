@@ -66,6 +66,8 @@
                     android:text="@string/button_addLocation"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp" />
+
+
             </LinearLayout>
         </ScrollView>
 

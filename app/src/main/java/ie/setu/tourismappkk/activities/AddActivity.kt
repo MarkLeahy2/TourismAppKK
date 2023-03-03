@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Log.i
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import ie.setu.tourismappkk.R
@@ -18,7 +19,14 @@ class AddActivity {
             menuInflater.inflate(R.menu.menu_main, menu)
             return super.onCreateOptionsMenu(menu)
         }
-
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            when (item.itemId) {
+                R.id.item_cancel -> {
+                    finish()
+                }
+            }
+            return super.onOptionsItemSelected(item)
+        }
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 

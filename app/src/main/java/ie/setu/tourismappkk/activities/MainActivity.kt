@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val buttonClick = binding.Login
         buttonClick.setOnClickListener() {
-            val intent = Intent(this, TourismListActivity::class.java)
+            val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
 
