@@ -1,21 +1,39 @@
 package ie.setu.tourismappkk.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import ie.setu.tourismappkk.R
+import ie.setu.tourismappkk.databinding.ActivityMainBinding
+import ie.setu.tourismappkk.databinding.ActivityTourismListBinding
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val buttonClick = binding.Login
+        buttonClick.setOnClickListener() {
+            val intent = Intent(this, TourismListActivity::class.java)
+            startActivity(intent)
+        }
+
+
+       // setContentView(R.layout.activity_main)
     }
-    fun clickMe(v : View) {
-        Toast.makeText(this,
+   // private lateinit var binding: ActivityTourismListBinding
+
+    fun clickMe(v: View) {
+        Toast.makeText(
+            this,
             "Logging in",
-            Toast.LENGTH_LONG).show()
+            Toast.LENGTH_LONG
+        ).show()
     }
 
 }

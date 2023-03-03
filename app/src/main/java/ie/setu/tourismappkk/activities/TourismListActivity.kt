@@ -1,10 +1,14 @@
 package ie.setu.tourismappkk.activities
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
+import android.view.MenuItem
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ie.setu.tourismappkk.R
@@ -55,7 +59,7 @@ class TourismAdapter constructor(private var tList: ArrayList<TourismModel>) :
 
     override fun getItemCount(): Int = tList.size
 
-    class MainHolder(private val binding : CardTourismBinding) :
+    class MainHolder(private val binding: CardTourismBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(tObject: TourismModel) {
@@ -63,5 +67,5 @@ class TourismAdapter constructor(private var tList: ArrayList<TourismModel>) :
             binding.description.text = tObject.description
         }
     }
-
 }
+
