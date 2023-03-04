@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,25 +13,47 @@
         android:layout_height="237dp"
         android:padding="16dp">
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:padding="16dp">
+
         <TextView
             android:id="@+id/tlistTitle"
-            android:layout_width="123dp"
-            android:layout_height="64dp"
+            android:layout_width="206dp"
+            android:layout_height="84dp"
             android:layout_alignParentTop="true"
             android:textSize="30sp"
             tools:text="A Title" />
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="214dp"
-            android:layout_height="74dp"
+            android:layout_width="390dp"
+            android:layout_height="87dp"
             android:layout_below="@id/tlistTitle"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="181dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="0dp"
             tools:text="A Description" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="131dp"
+            android:layout_height="127dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/castle" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:padding="16dp">
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

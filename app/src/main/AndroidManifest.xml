@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourismAppKK"
         tools:targetApi="31">
+
         <activity
             android:name=".activities.TourismListActivity"
             android:exported="true">
 
+        </activity>
+        <activity android:name=".activities.AddActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".activities.MainActivity"

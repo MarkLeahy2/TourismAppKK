@@ -5,6 +5,7 @@
     <string name="button_addLocation">Add Location</string>
     <string name="hint_tourismTitle">Tourism Title</string>
     <string name="menu_cancelLocation">Cancel</string>
+    <string name="button_TourismList">Tourism List</string>
 
 
 </resources>

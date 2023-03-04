@@ -1,5 +1,6 @@
 package ie.setu.tourismappkk.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.i
@@ -8,17 +9,19 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import ie.setu.tourismappkk.R
+import ie.setu.tourismappkk.databinding.ActivityMainBinding
 import ie.setu.tourismappkk.databinding.ActivityTourismListBinding
 import ie.setu.tourismappkk.databinding.AddActivityBinding
 
-class AddActivity {
     class AddActivity : AppCompatActivity() {
+
         lateinit var binding: AddActivityBinding
 
         override fun onCreateOptionsMenu(menu: Menu): Boolean {
             menuInflater.inflate(R.menu.menu_main, menu)
             return super.onCreateOptionsMenu(menu)
         }
+
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.item_cancel -> {
@@ -27,19 +30,30 @@ class AddActivity {
             }
             return super.onOptionsItemSelected(item)
         }
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
+        //override fun onCreate(savedInstanceState: Bundle?) {
+            //super.onCreate(savedInstanceState)
+
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+
+                binding = AddActivityBinding.inflate(layoutInflater)
+                //setContentView(binding.root)
+                val buttonClick = binding.tourismList
+                buttonClick.setOnClickListener() {
+                    val intent = Intent(this, TourismListActivity::class.java)
+                    startActivity(intent)
+                }
 
 
-            binding = AddActivityBinding.inflate(layoutInflater)
+           // binding = AddActivityBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-            binding = AddActivityBinding.inflate(layoutInflater)
-            setContentView(binding.root)
+            //binding = AddActivityBinding.inflate(layoutInflater)
+           // setContentView(binding.root)
 
             binding.toolbarAdd.title = title
             setSupportActionBar(binding.toolbarAdd)
-           /// Timber.plant(Timber.DebugTree())
+
 
 
 
@@ -51,6 +65,8 @@ class AddActivity {
                     val TourismTitle = binding.TourismTitle.text.toString()
                     if (TourismTitle.isNotEmpty()) {
                        i("info","add Button Pressed:$TourismTitle")
+
+
                     }
                     else {
                         Snackbar
@@ -63,4 +79,3 @@ class AddActivity {
             }
         }
     }
-}
