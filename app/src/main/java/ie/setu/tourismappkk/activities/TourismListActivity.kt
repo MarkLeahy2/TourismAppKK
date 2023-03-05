@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +25,17 @@ class TourismListActivity : AppCompatActivity() {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityTourismListBinding
+    private lateinit var adapter: ArrayAdapter<String>
+
+    val locationList =
+        listOf(
+            "Kilkenny Castle",
+            "Round Tower",
+            "Black Abbey",
+            "Medieval Mile Museum",
+            "Design Centre"
+        )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTourismListBinding.inflate(layoutInflater)
@@ -32,7 +46,38 @@ class TourismListActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = TourismAdapter(app.tourismList)
+
+
+        setupListView()
+        setupSearchView()
+
+
     }
+    private fun setupListView() {
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
+       // binding.listView.adapter = adapter
+    }
+
+    private fun setupSearchView() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener
+            //SearchView.OnQueryTextListener
+        {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                val isMatchFound = locationList.contains(p0)
+                val msg = if (isMatchFound) "Found: $p0" else getString(R.string.no_match)
+                Toast.makeText(this@TourismListActivity, msg, Toast.LENGTH_SHORT).show()
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                adapter.filter.filter(p0)
+                return false
+            }
+        })
+    }
+
+
+
 
 
 override fun onCreateOptionsMenu(menu: Menu): Boolean {

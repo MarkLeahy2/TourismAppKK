@@ -92,18 +92,19 @@
 
                 <RatingBar
                     android:id="@+id/ratingBar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="384dp"
                     android:layout_height="wrap_content"
-                    android:stepSize="1"
-                    android:numStars="5"
-                    android:layout_centerHorizontal="true"
-                    android:saveEnabled="true" />
+                    android:numStars="8"
+                    android:saveEnabled="true"
+                    android:stepSize="1" />
 
                 <Button
                     android:id="@+id/rateMe"
-                    android:layout_width="match_parent"
-                    android:layout_height="62dp"
-                    android:text="Rate Me" />
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:text="Rate Me"
+                    tools:layout_editor_absoluteX="250dp"
+                    tools:layout_editor_absoluteY="340dp" />
 
 
             </LinearLayout>
