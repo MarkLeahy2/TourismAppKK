@@ -2,20 +2,22 @@ package ie.setu.tourismappkk.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Log.i
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.RatingBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import ie.setu.tourismappkk.R
-import ie.setu.tourismappkk.databinding.ActivityMainBinding
-import ie.setu.tourismappkk.databinding.ActivityTourismListBinding
 import ie.setu.tourismappkk.databinding.AddActivityBinding
 
-    class AddActivity : AppCompatActivity() {
+class AddActivity : AppCompatActivity() {
 
         lateinit var binding: AddActivityBinding
+
+
 
         override fun onCreateOptionsMenu(menu: Menu): Boolean {
             menuInflater.inflate(R.menu.menu_main, menu)
@@ -30,18 +32,26 @@ import ie.setu.tourismappkk.databinding.AddActivityBinding
             }
             return super.onOptionsItemSelected(item)
         }
-        //override fun onCreate(savedInstanceState: Bundle?) {
-            //super.onCreate(savedInstanceState)
+
 
             override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
-
                 binding = AddActivityBinding.inflate(layoutInflater)
                 //setContentView(binding.root)
                 val buttonClick = binding.tourismList
                 buttonClick.setOnClickListener() {
                     val intent = Intent(this, TourismListActivity::class.java)
                     startActivity(intent)
+
+
+                   val rateMe = findViewById<Button>(R.id.rateMe) as Button
+                    val ratingBar = findViewById<RatingBar>(R.id.ratingBar) as RatingBar
+
+                    rateMe.setOnClickListener {
+                        val getRatingValue = ratingBar. rating
+                        Toast.makeText(this@AddActivity, "Rating =" +getRatingValue, Toast.LENGTH_LONG
+                            ).show()
+                    }
                 }
 
 
@@ -76,6 +86,7 @@ import ie.setu.tourismappkk.databinding.AddActivityBinding
 
 
                 }
+
             }
         }
     }

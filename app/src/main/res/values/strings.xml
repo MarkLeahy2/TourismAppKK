@@ -6,6 +6,7 @@
     <string name="hint_tourismTitle">Tourism Title</string>
     <string name="menu_cancelLocation">Cancel</string>
     <string name="button_TourismList">Tourism List</string>
+    <string name="button_rateMe">Rate Me</string>
 
 
 </resources>
