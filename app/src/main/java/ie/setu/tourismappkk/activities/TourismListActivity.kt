@@ -55,7 +55,7 @@ class TourismListActivity : AppCompatActivity() {
     }
     private fun setupListView() {
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
-       // binding.listView.adapter = adapter
+       //binding.listView.adapter = adapter
     }
 
     private fun setupSearchView() {

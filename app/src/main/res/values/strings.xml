@@ -7,11 +7,12 @@
     <string name="menu_cancelLocation">Cancel</string>
     <string name="button_TourismList">Tourism List</string>
     <string name="button_rateMe">Rate Me</string>
+    <string name="button_addImage"> Add Image </string>
+    <string name="select_tourism_image">Select tourism image</string>
 
-        <string name="application_name">SearchView</string>
-        <string name="no_match">No match found</string>
 
-
+    <string name="application_name">SearchView</string>
+    <string name="no_match">No match found</string>
 
 
 </resources>
