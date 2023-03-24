@@ -46,6 +46,10 @@ class TourismListActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = TourismAdapter(app.tourismList)
+        //binding.recyclerView.adapter = TourismAdapter(app.tourismList.findAll()
+        // app.placemarks.add(placemark.copy())
+        //app.tourism.create(tourism.copy())
+
 
 
         setupListView()

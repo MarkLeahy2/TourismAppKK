@@ -9,10 +9,12 @@ import android.widget.Toast
 import ie.setu.tourismappkk.R
 import ie.setu.tourismappkk.databinding.ActivityMainBinding
 import ie.setu.tourismappkk.databinding.ActivityTourismListBinding
+import ie.setu.tourismappkk.models.TourismMemStore
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    val tourism = TourismMemStore()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         buttonClick.setOnClickListener() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
+
+            // val placemarks = ArrayList<PlacemarkModel>()
+
+
         }
 
 
