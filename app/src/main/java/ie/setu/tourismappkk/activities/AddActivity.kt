@@ -73,6 +73,11 @@ class AddActivity : AppCompatActivity() {
             }
             binding.chooseImage.setOnClickListener {
                 showImagePicker(imageIntentLauncher)
+
+                binding.tourismLocation.setOnClickListener {
+                    i ("","Set Location Pressed")
+                }
+
             }
         }
 
