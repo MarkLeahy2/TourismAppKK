@@ -24,11 +24,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
 
-            // val placemarks = ArrayList<PlacemarkModel>()
+
 
 
         }
-
 
        // setContentView(R.layout.activity_main)
     }

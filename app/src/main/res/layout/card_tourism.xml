@@ -16,6 +16,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="251dp"
+
             android:padding="16dp">
 
             <RelativeLayout
@@ -28,7 +29,7 @@
                     android:layout_width="202dp"
                     android:layout_height="74dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:textSize="30sp"
                     tools:text="A Title" />
 
@@ -46,11 +47,15 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="92dp"
-                    android:layout_height="83dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="20dp"
-                    app:srcCompat="@drawable/logo" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_mode_edit_24" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_delete_24" />
 
             </RelativeLayout>
         </RelativeLayout>

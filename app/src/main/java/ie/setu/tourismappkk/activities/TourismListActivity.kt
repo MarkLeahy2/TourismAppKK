@@ -25,8 +25,8 @@ class TourismListActivity : AppCompatActivity() {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityTourismListBinding
-    private lateinit var adapter: ArrayAdapter<String>
-
+    //private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var adapter: TourismAdapter
     val locationList =
         listOf(
             "Kilkenny Castle",
@@ -45,20 +45,21 @@ class TourismListActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = TourismAdapter(app.tourismList)
+        adapter = TourismAdapter(app.tourismList)
+        binding.recyclerView.adapter = adapter
         //binding.recyclerView.adapter = TourismAdapter(app.tourismList.findAll()
         // app.placemarks.add(placemark.copy())
         //app.tourism.create(tourism.copy())
 
 
 
-        setupListView()
+       // setupListView()
         setupSearchView()
 
 
     }
     private fun setupListView() {
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
+       // adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
        //binding.listView.adapter = adapter
     }
 
@@ -67,24 +68,32 @@ class TourismListActivity : AppCompatActivity() {
             //SearchView.OnQueryTextListener
         {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                val isMatchFound = locationList.contains(p0)
-                val msg = if (isMatchFound) "Found: $p0" else getString(R.string.no_match)
-                Toast.makeText(this@TourismListActivity, msg, Toast.LENGTH_SHORT).show()
+               // val isMatchFound = locationList.contains(p0)
+              //  val msg = if (isMatchFound) "Found: $p0" else getString(R.string.no_match)
+              //  Toast.makeText(this@TourismListActivity, msg, Toast.LENGTH_SHORT).show()
                 return false
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
-                adapter.filter.filter(p0)
+                filterList(p0)
                 return false
             }
         })
     }
 
+    private fun filterList(p0: String?) {
+        if (p0 != null) {
+            var newList = app.tourismList.filter { s -> s.title.startsWith(p0) }
+            adapter = TourismAdapter(newList as ArrayList<TourismModel>)
+            binding.recyclerView.adapter = adapter
+            adapter.notifyDataSetChanged()
+
+        }
+
+    }
 
 
-
-
-override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }

@@ -1,32 +1,37 @@
 package ie.setu.tourismappkk.models
 
 import android.location.Location
+import android.util.Log
+import android.util.Log.i
 
 class TourismMemStore: TourismStore {
 
-    private val tourism = ArrayList<TourismModel>()
+    private val tourismList = ArrayList<TourismModel>()
 
     override fun findAll(): List<TourismModel> {
-        return tourism
+        return tourismList
     }
 
-    override fun create(tourism: TourismModel) {
-        tourism.add(tourism)
-    }
-    override fun create(Location: TourismModel) {
-        Location.add(Location)
+    //override fun create(tourism: TourismModel) {
+       // tourism.add(tourism)
+   // }
+    override fun create(touristAttraction: TourismModel) {
+        tourismList.add(touristAttraction)
         logAll()
     }
-    override fun update(tourism: TourismModel) {
-        var foundLocation: TourismModel? = Location.find { p -> p.id == Location.id }
+    override fun update(touristAttraction: TourismModel) {
+        var foundLocation: TourismModel? =tourismList.find { p -> p.id == touristAttraction.id }
         if (foundLocation != null) {
-            foundLocation.title = tourism.title
-            foundLocation.description = tourism.description
+            foundLocation.title = touristAttraction.title
+            foundLocation.description = touristAttraction.description
             logAll()
         }
     }
     fun logAll() {
-        Location.forEach{ i("${it}") }
+        tourismList.forEach{ Log.i("info","${it}") }
+    }
+    fun filterName(name:String): List<TourismModel>{
+        return tourismList.filter { s -> s.title.startsWith(name) }
     }
 }
 

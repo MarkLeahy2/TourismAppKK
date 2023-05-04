@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="ie.setu.tourismappkk.activities.AddActivity">
 
-    <RelativeLayout
+   <RelativeLayout
         android:layout_width="408dp"
         android:layout_height="692dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +42,7 @@
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbarAdd"
                     android:layout_width="396dp"
-                    android:layout_height="79dp"
+                    android:layout_height="wrap_content"
                     android:background="?attr/colorPrimary"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme" />
@@ -54,6 +54,19 @@
                     android:layout_margin="8dp"
                     android:autofillHints="hint"
                     android:hint="@string/hint_tourismTitle"
+                    android:inputType="text"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_tourismDescription"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
